@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modern Calculator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .calculator {
+      background-color: orange;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 320px;
+    }
+
+    .calculator h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+   #display {
+      width: 100%;
+      height: 50px;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-align: right;
+    /*  padding: ;*/
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      outline: none;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    button {
+      padding: 20px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      background-color: #e0e0e0;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ccc;
+    }
+
+    .operator {
+      background-color: #ffca28;
+    }
+
+    .operator:hover {
+      background-color: #ffb300;
+    }
+
+    .equal {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    .equal:hover {
+      background-color: #43a047;
+    }
+
+    .clear {
+      background-color: #f44336;
+      color: white;
+    }
+
+    .clear:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <h1>Calculator</h1>
+   <input type="text" id="display"/>
+    <div class="buttons">
+      <button class="clear" onclick="clearAll()">CA</button>
+      <button onclick="del()">⌫</button>
+      <button class="operator" value="√" onclick="addNum(this.value)">√</button>
+      <button class="operator" value="/" onclick="addNum(this.value)">/</button>
+
+      <button value="7" onclick="addNum(this.value)">7</button>
+      <button value="8" onclick="addNum(this.value)">8</button>
+      <button value="9" onclick="addNum(this.value)">9</button>
+      <button class="operator" value="*" onclick="addNum(this.value)">×</button>
+
+      <button value="4" onclick="addNum(this.value)">4</button>
+      <button value="5" onclick="addNum(this.value)">5</button>
+      <button value="6" onclick="addNum(this.value)">6</button>
+      <button class="operator" value="-" onclick="addNum(this.value)">−</button>
+
+      <button value="1" onclick="addNum(this.value)">1</button>
+      <button value="2" onclick="addNum(this.value)">2</button>
+      <button value="3" onclick="addNum(this.value)">3</button>
+      <button class="operator" value="+" onclick="addNum(this.value)">+</button>
+
+      <button value="%" onclick="addNum(this.value)">%</button>
+      <button value="0" onclick="addNum(this.value)">0</button>
+      <button value="." onclick="addNum(this.value)">.</button>
+      <button class="equal" value="=" onclick="calculate(this.value)">=</button>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
